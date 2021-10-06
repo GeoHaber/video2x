@@ -139,12 +139,12 @@ ffmpeg:
     input_options:
       '-f': image2 # force image2 format
     output_options:
-      '-vcodec': libx264 # video codec
+      '-vcodec': libx265 # video codec
       '-pix_fmt': 'yuv420p' # overwrite default pixel format
-      '-crf': 17 # H.264 Constant Rate Factor
+      '-crf': 18 # H.264 Constant Rate Factor
       '-b:v': null # target average bitrate
       '-vf': 'pad=ceil(iw/2)*2:ceil(ih/2)*2' # ensure output is divisible by 2, recommended for libx264
-      '-tune': 'animation' # encoding tuning film/animation/grain/stillimage/fastdecode/zerolatency/psnr/ssim
+      '-tune': 'video' # encoding tuning film/animation/grain/stillimage/fastdecode/zerolatency/psnr/ssim
   # Step 3: Streams Migration
   # migrate audio and subtitle streams from original
   #   video into the upscaled video
